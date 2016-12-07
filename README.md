@@ -4,8 +4,8 @@
 A simple NodeJS RESTapi with authentication
 
 ## Installation
-`npm install`
-`npm start`
+1. `npm install`
+1. `npm start`
 
 ## TODO 
 1. implement unit testing
