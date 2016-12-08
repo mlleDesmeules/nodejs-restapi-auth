@@ -30,7 +30,9 @@ const Server  = app.listen(config.port, function (  ) {
 //  ------------------
 
 //  Log request to API with morgan.
-app.use(logger("dev"));
+if (process.env.NODE_ENV === 'dev') {
+	app.use( logger( "dev" ) );
+}
 
 //  Parse urlencoded bodies
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -51,3 +53,8 @@ app.use(function ( req, res, next ) {
 //  --------------
 
 router(app);
+
+//  --------------
+//      EXPORT
+//  --------------
+module.exports = app;
